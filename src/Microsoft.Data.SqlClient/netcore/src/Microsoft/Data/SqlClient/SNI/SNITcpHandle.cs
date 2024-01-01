@@ -612,7 +612,9 @@ namespace Microsoft.Data.SqlClient.SNI
                     else
                     {
                         // TODO: Resolve whether to send _serverNameIndication or _targetServer. _serverNameIndication currently results in error. Why?
-                        _sslStream.AuthenticateAsClient(_targetServer, null, s_supportedProtocols, false);
+                        //LLT: DisabledReflection
+                        //_sslStream.AuthenticateAsClient(_targetServer, null, s_supportedProtocols, false);
+                        _sslStream.AuthenticateAsClient(_targetServer, null, 0, false);
                     }
                     if (_sslOverTdsStream is not null)
                     {

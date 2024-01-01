@@ -3,7 +3,8 @@
 // See the LICENSE file in the project root for more information.
 
 using System;
-using System.Reflection;
+//LLT: DisabledReflection
+//using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace Microsoft.Data.SqlClient
@@ -30,7 +31,9 @@ namespace Microsoft.Data.SqlClient
             catch (Exception e)
             {
                 // Don't throw an exception for an invalid config file
-                SqlClientEventSource.Log.TryTraceEvent("<sc.{0}.{1}|INFO>: {2}", TypeName, MethodBase.GetCurrentMethod().Name, e);
+                //LLT: DisabledReflection
+                //SqlClientEventSource.Log.TryTraceEvent("<sc.{0}.{1}|INFO>: {2}", TypeName, MethodBase.GetCurrentMethod().Name, e);
+                SqlClientEventSource.Log.TryTraceEvent("<sc.{0}.{1}|INFO>: {2}", TypeName, "LocalAppContextSwitches", e);
             }
         }
 #endif

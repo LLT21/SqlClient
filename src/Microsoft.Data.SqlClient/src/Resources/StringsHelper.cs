@@ -31,6 +31,9 @@ namespace Microsoft.Data
 
         public static string GetResourceString(string res)
         {
+            //LLT: DisabledReflection
+            return res; 
+            /*
             StringsHelper sys = GetLoader();
             if (sys is null)
                 return null;
@@ -39,6 +42,7 @@ namespace Microsoft.Data
             // If "res" is not a resource id, temp will be null.
             string temp = sys._resources.GetString(res, StringsHelper.Culture);
             return temp ?? res;
+            */
         }
 
         public static string GetString(string res, params object[] args)

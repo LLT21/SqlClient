@@ -701,17 +701,22 @@ namespace Microsoft.Data.Common
             }
         }
 
-        private static Version s_systemDataVersion;
+        //LLT: DisabledReflection
+        //private static Version s_systemDataVersion;
 
         internal static Version GetAssemblyVersion()
         {
+            //LLT: DisabledReflection
+            return new Version("5.1.0");
             // NOTE: Using lazy thread-safety since we don't care if two threads both happen to update the value at the same time
+            /*
             if (s_systemDataVersion is null)
             {
                 s_systemDataVersion = new Version(ThisAssembly.InformationalVersion);
             }
 
             return s_systemDataVersion;
+            */
         }
 
 
@@ -720,7 +725,8 @@ namespace Microsoft.Data.Common
 
         internal static bool IsAzureSynapseOnDemandEndpoint(string dataSource)
         {
-            return IsEndpoint(dataSource, ONDEMAND_PREFIX) || dataSource.Contains(AZURE_SYNAPSE);
+            return false; 
+            //return IsEndpoint(dataSource, ONDEMAND_PREFIX) || dataSource.Contains(AZURE_SYNAPSE);
         }
 
         internal static readonly string[] s_azureSqlServerEndpoints = { StringsHelper.GetString(Strings.AZURESQL_GenericEndpoint),
@@ -736,6 +742,8 @@ namespace Microsoft.Data.Common
         // This method assumes dataSource parameter is in TCP connection string format.
         private static bool IsEndpoint(string dataSource, string prefix)
         {
+            return true; 
+            /*
             int length = dataSource.Length;
             // remove server port
             int foundIndex = dataSource.LastIndexOf(',');
@@ -771,6 +779,7 @@ namespace Microsoft.Data.Common
             }
 
             return false;
+            */
         }
 
         internal static ArgumentException SingleValuedProperty(string propertyName, string value)

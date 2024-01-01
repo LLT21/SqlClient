@@ -1804,6 +1804,9 @@ namespace Microsoft.Data.SqlClient
         {
             SqlConnectionString connectionOptions = (SqlConnectionString)ConnectionOptions;
 
+            //LLT: DisabledReflection
+            _cultureCheckState = CultureCheckState.Standard; 
+
             if (_cultureCheckState != CultureCheckState.Standard)
             {
                 // .NET Core 2.0 and up supports a Globalization Invariant Mode to reduce the size of

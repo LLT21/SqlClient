@@ -4,7 +4,8 @@
 
 using System;
 using System.Configuration;
-using System.Reflection;
+//LLT: DisabledReflection
+//using System.Reflection;
 
 namespace Microsoft.Data.SqlClient
 {
@@ -13,7 +14,8 @@ namespace Microsoft.Data.SqlClient
     /// </summary>
     internal sealed class AppConfigManager
     {
-        private const string TypeName = nameof(AppConfigManager);
+        //LLT: DisabledReflection
+        private const string TypeName = "AppConfigManager"; //nameof(AppConfigManager);
 
         /// <summary>
         /// Fetch the specified configuration section from the configuration file
@@ -21,7 +23,8 @@ namespace Microsoft.Data.SqlClient
         /// <returns>The specified `T` object or default value of `T` if the section doesn't exist.</returns>
         public static T FetchConfigurationSection<T>(string name)
         {
-            string methodName = MethodBase.GetCurrentMethod().Name;
+            //LLT: DisabledReflection
+            string methodName = "FetchConfigurationSection"; // MethodBase.GetCurrentMethod().Name;
 
             object section = null;
             try
