@@ -725,14 +725,13 @@ namespace Microsoft.Data.Common
 
         internal static bool IsAzureSynapseOnDemandEndpoint(string dataSource)
         {
-            return false; 
-            //return IsEndpoint(dataSource, ONDEMAND_PREFIX) || dataSource.Contains(AZURE_SYNAPSE);
+            return IsEndpoint(dataSource, ONDEMAND_PREFIX) || dataSource.Contains(AZURE_SYNAPSE);
         }
 
-        internal static readonly string[] s_azureSqlServerEndpoints = { StringsHelper.GetString(Strings.AZURESQL_GenericEndpoint),
-                                                                        StringsHelper.GetString(Strings.AZURESQL_GermanEndpoint),
-                                                                        StringsHelper.GetString(Strings.AZURESQL_UsGovEndpoint),
-                                                                        StringsHelper.GetString(Strings.AZURESQL_ChinaEndpoint)};
+        internal static readonly string[] s_azureSqlServerEndpoints = { ".database.windows.net",
+                                                                        ".database.cloudapi.de",
+                                                                        ".database.usgovcloudapi.net",
+                                                                        ".database.chinacloudapi.cn"};
 
         internal static bool IsAzureSqlServerEndpoint(string dataSource)
         {
@@ -742,8 +741,6 @@ namespace Microsoft.Data.Common
         // This method assumes dataSource parameter is in TCP connection string format.
         private static bool IsEndpoint(string dataSource, string prefix)
         {
-            return true; 
-            /*
             int length = dataSource.Length;
             // remove server port
             int foundIndex = dataSource.LastIndexOf(',');
@@ -779,7 +776,6 @@ namespace Microsoft.Data.Common
             }
 
             return false;
-            */
         }
 
         internal static ArgumentException SingleValuedProperty(string propertyName, string value)
