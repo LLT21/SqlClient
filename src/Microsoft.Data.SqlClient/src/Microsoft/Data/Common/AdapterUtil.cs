@@ -701,22 +701,18 @@ namespace Microsoft.Data.Common
             }
         }
 
-        //LLT: DisabledReflection
-        //private static Version s_systemDataVersion;
+        private static Version s_systemDataVersion;
 
         internal static Version GetAssemblyVersion()
         {
-            //LLT: DisabledReflection
-            return new Version("5.1.0");
             // NOTE: Using lazy thread-safety since we don't care if two threads both happen to update the value at the same time
-            /*
             if (s_systemDataVersion is null)
             {
-                s_systemDataVersion = new Version(ThisAssembly.InformationalVersion);
+                //LLT: DisabledReflection
+                s_systemDataVersion = new Version("5.1.0"); //new Version(ThisAssembly.InformationalVersion);
             }
 
             return s_systemDataVersion;
-            */
         }
 
 
