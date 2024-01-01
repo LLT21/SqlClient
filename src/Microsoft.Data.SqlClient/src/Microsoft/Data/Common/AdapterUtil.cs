@@ -728,6 +728,14 @@ namespace Microsoft.Data.Common
             return IsEndpoint(dataSource, ONDEMAND_PREFIX) || dataSource.Contains(AZURE_SYNAPSE);
         }
 
+
+        //LLT: DisabledReflection
+        /*
+        internal static readonly string[] s_azureSqlServerEndpoints = { StringsHelper.GetString(Strings.AZURESQL_GenericEndpoint),
+                                                                        StringsHelper.GetString(Strings.AZURESQL_GermanEndpoint),
+                                                                        StringsHelper.GetString(Strings.AZURESQL_UsGovEndpoint),
+                                                                        StringsHelper.GetString(Strings.AZURESQL_ChinaEndpoint)};
+        */
         internal static readonly string[] s_azureSqlServerEndpoints = { ".database.windows.net",
                                                                         ".database.cloudapi.de",
                                                                         ".database.usgovcloudapi.net",
