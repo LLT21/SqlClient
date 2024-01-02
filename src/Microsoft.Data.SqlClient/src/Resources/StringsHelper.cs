@@ -31,7 +31,7 @@ namespace Microsoft.Data
 
         public static string GetResourceString(string res)
         {
-            //LLT: DisabledReflection
+            //TODO: DisabledReflection
             return res; 
             /*
             StringsHelper sys = GetLoader();

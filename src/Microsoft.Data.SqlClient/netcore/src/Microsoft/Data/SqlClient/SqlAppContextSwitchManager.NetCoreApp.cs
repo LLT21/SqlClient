@@ -14,8 +14,7 @@ namespace Microsoft.Data.SqlClient
     /// </summary>
     internal sealed class SqlAppContextSwitchManager
     {
-        //TODO: DisabledReflection
-        private const string TypeName = nameof(SqlAppContextSwitchManager); //nameof(SqlAppContextSwitchManager);
+        private const string TypeName = nameof(SqlAppContextSwitchManager);
         /// <summary>
         /// To support the AppContext's set switch through the config file for .NET Core; 
         /// .Net Framework supports it internally through the configuration file by 'AppContextSwitchOverrides' element under 'runtime' section
