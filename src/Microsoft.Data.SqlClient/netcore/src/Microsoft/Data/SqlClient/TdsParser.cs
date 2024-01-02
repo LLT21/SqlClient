@@ -2674,7 +2674,7 @@ namespace Microsoft.Data.SqlClient
                         if (env._newValue == TdsEnums.DEFAULT_ENGLISH_CODE_PAGE_STRING)
                         {
                             _defaultCodePage = TdsEnums.DEFAULT_ENGLISH_CODE_PAGE_VALUE;
-                            //LLT: DisabledReflection
+                            //TODO: DisabledReflection
                             _defaultEncoding = System.Text.Encoding.UTF8; //System.Text.Encoding.GetEncoding(_defaultCodePage);
                         }
                         else
@@ -2684,7 +2684,7 @@ namespace Microsoft.Data.SqlClient
                             string stringCodePage = env._newValue.Substring(TdsEnums.CHARSET_CODE_PAGE_OFFSET);
 
                             _defaultCodePage = int.Parse(stringCodePage, NumberStyles.Integer, CultureInfo.InvariantCulture);
-                            //LLT: DisabledReflection
+                            //TODO: DisabledReflection
                             _defaultEncoding = System.Text.Encoding.UTF8; //System.Text.Encoding.GetEncoding(_defaultCodePage);
                         }
 
@@ -2760,7 +2760,7 @@ namespace Microsoft.Data.SqlClient
                                 if (newCodePage != _defaultCodePage)
                                 {
                                     _defaultCodePage = newCodePage;
-                                    //LLT: DisabledReflection
+                                    //TODO: DisabledReflection
                                     _defaultEncoding = System.Text.Encoding.UTF8; //System.Text.Encoding.GetEncoding(_defaultCodePage);
                                 }
                             }
@@ -4172,7 +4172,7 @@ namespace Microsoft.Data.SqlClient
                     else
                     {
                         rec.codePage = codePage;
-                        //LLT: DisabledReflection
+                        //TODO: DisabledReflection
                         rec.encoding = System.Text.Encoding.UTF8; //System.Text.Encoding.GetEncoding(rec.codePage);
                     }
                 }
@@ -4956,7 +4956,7 @@ namespace Microsoft.Data.SqlClient
                     else
                     {
                         col.codePage = codePage;
-                        //LLT: DisabledReflection
+                        //TODO: DisabledReflection
                         col.encoding = System.Text.Encoding.UTF8; //System.Text.Encoding.GetEncoding(col.codePage);
                     }
                 }

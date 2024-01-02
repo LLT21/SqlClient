@@ -4,7 +4,7 @@
 
 using System;
 using System.Configuration;
-//LLT: DisabledReflection
+//TODO: DisabledReflection
 //using System.Reflection;
 
 namespace Microsoft.Data.SqlClient
@@ -14,16 +14,16 @@ namespace Microsoft.Data.SqlClient
     /// </summary>
     internal sealed class SqlAppContextSwitchManager
     {
-        //LLT: DisabledReflection
-        private const string TypeName = "SqlAppContextSwitchManager"; //nameof(SqlAppContextSwitchManager);
+        //TODO: DisabledReflection
+        private const string TypeName = nameof(SqlAppContextSwitchManager); //nameof(SqlAppContextSwitchManager);
         /// <summary>
         /// To support the AppContext's set switch through the config file for .NET Core; 
         /// .Net Framework supports it internally through the configuration file by 'AppContextSwitchOverrides' element under 'runtime' section
         /// </summary>
         internal static void ApplyContextSwitches(IAppContextSwitchOverridesSection appContextSwitches)
         {
-            //LLT: DisabledReflection
-            string methodName = "ApplyContextSwitches"; //MethodBase.GetCurrentMethod().Name;
+            //TODO: DisabledReflection
+            string methodName = nameof(ApplyContextSwitches); //MethodBase.GetCurrentMethod().Name;
             SqlClientEventSource.Log.TryTraceEvent("<sc.{0}.{1}|INFO> Entry point.", TypeName, methodName);
             if (appContextSwitches != null)
             {
@@ -35,8 +35,8 @@ namespace Microsoft.Data.SqlClient
 
         private static bool ApplySwitchValues(string[] switches)
         {
-            //LLT: DisabledReflection
-            string methodName = "ApplySwitchValues"; //MethodBase.GetCurrentMethod().Name;
+            //TODO: DisabledReflection
+            string methodName = nameof(ApplySwitchValues); //MethodBase.GetCurrentMethod().Name;
             SqlClientEventSource.Log.TryTraceEvent("<sc.{0}.{1}|INFO> Entry point.", TypeName, methodName);
 
             if (switches == null || switches.Length == 0 || switches.Length % 2 == 1)
