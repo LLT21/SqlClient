@@ -708,7 +708,7 @@ namespace Microsoft.Data.Common
             // NOTE: Using lazy thread-safety since we don't care if two threads both happen to update the value at the same time
             if (s_systemDataVersion is null)
             {
-                //LLT: DisabledReflection
+                //TODO: DisabledReflection
                 s_systemDataVersion = new Version("5.1.0"); //new Version(ThisAssembly.InformationalVersion);
             }
 
@@ -725,7 +725,7 @@ namespace Microsoft.Data.Common
         }
 
 
-        //LLT: DisabledReflection
+        //TODO: DisabledReflection
         /*
         internal static readonly string[] s_azureSqlServerEndpoints = { StringsHelper.GetString(Strings.AZURESQL_GenericEndpoint),
                                                                         StringsHelper.GetString(Strings.AZURESQL_GermanEndpoint),
