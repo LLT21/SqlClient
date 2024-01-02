@@ -1812,7 +1812,7 @@ namespace Microsoft.Data.SqlClient
                 // are not present. Throwing on open with a meaningful message helps identify the issue.
                 if (_cultureCheckState == CultureCheckState.Unknown)
                 {
-                    // TODO: DisabledReflection
+                    //TODO: DisabledReflection
                     //_cultureCheckState = CultureInfo.GetCultureInfo("en-US").EnglishName.Contains("Invariant") ? CultureCheckState.Invariant : CultureCheckState.Standard;
                     _cultureCheckState = CultureCheckState.Standard; 
                 }
