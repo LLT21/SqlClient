@@ -4384,7 +4384,9 @@ namespace Microsoft.Data.SqlClient
 
                 try
                 {
-                    codePage = CultureInfo.GetCultureInfo(cultureId).TextInfo.ANSICodePage;
+                    //TODO: DisabledReflection
+                    //codePage = CultureInfo.GetCultureInfo(cultureId).TextInfo.ANSICodePage;
+                    codePage = 0;
 
                     // SqlHot 50001398: CodePage can be zero, but we should defer such errors until
                     //  we actually MUST use the code page (i.e. don't error if no ANSI data is sent).
